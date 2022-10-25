@@ -149,6 +149,7 @@ public class Add_PatientPanel extends javax.swing.JPanel {
 
     private void txtcontactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontactActionPerformed
         // TODO add your handling code here:
+        //Comment Added
     }//GEN-LAST:event_txtcontactActionPerformed
 
     private void txtgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtgenderActionPerformed
