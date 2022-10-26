@@ -4,17 +4,32 @@
  */
 package Interface;
 
+import Model.Patient;
+import Model.PatientHistory;
+import java.util.Date;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 91983
  */
 public class Add_PatientPanel extends javax.swing.JPanel {
+           Patienthistory phistory;
+
 
     /**
      * Creates new form PatientPanel
      */
-    public Add_PatientPanel() {
+    public Add_PatientPanel(Patient phistory) {
         initComponents();
+        lblseldr.setVisible(false);
+        doctorbox.setVisible(false);
+        txtseldr.setVisible(false);
+        lblseldr.setVisible(false);
+        lbldoa.setVisible(false);
+        txtaptdate.setVisible(false);
+  
     }
 
     /**
@@ -26,31 +41,56 @@ public class Add_PatientPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        label1 = new java.awt.Label();
+        txtaptdate = new com.toedter.calendar.JDateChooser();
+        txtname = new javax.swing.JTextField();
+        txtcity = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        txtage = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        txtptorpr = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtcontact = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        txtseldr = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtgender = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        cbxgender = new javax.swing.JComboBox<>();
-        txtname = new javax.swing.JTextField();
-        txtcity = new javax.swing.JTextField();
-        txtage = new javax.swing.JTextField();
+        genderbox = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        lblseldr = new javax.swing.JLabel();
+        doctorbox = new javax.swing.JComboBox<>();
+        lbldoa = new javax.swing.JLabel();
+        patientbox = new javax.swing.JComboBox<>();
+        button1 = new java.awt.Button();
 
         setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
 
-        label1.setAlignment(java.awt.Label.CENTER);
-        label1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        label1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        label1.setText("Add Patient");
+        txtcity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtcityActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setText("                    Person Details");
+
+        txtage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtageActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Name");
 
+        txtptorpr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtptorprActionPerformed(evt);
+            }
+        });
+
         jLabel3.setText("Age");
 
-        txtcontact.setText("jTextField1");
         txtcontact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcontactActionPerformed(evt);
@@ -59,9 +99,14 @@ public class Add_PatientPanel extends javax.swing.JPanel {
 
         jLabel4.setText("City");
 
+        txtseldr.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtseldrActionPerformed(evt);
+            }
+        });
+
         jLabel5.setText("Gender");
 
-        txtgender.setText("jTextField1");
         txtgender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtgenderActionPerformed(evt);
@@ -70,21 +115,40 @@ public class Add_PatientPanel extends javax.swing.JPanel {
 
         jLabel6.setText("Contact no.");
 
-        cbxgender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        txtname.setText("jTextField1");
-
-        txtcity.setText("jTextField1");
-        txtcity.addActionListener(new java.awt.event.ActionListener() {
+        genderbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
+        genderbox.setSelectedIndex(-1);
+        genderbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtcityActionPerformed(evt);
+                genderboxActionPerformed(evt);
             }
         });
 
-        txtage.setText("jTextField1");
-        txtage.addActionListener(new java.awt.event.ActionListener() {
+        jLabel7.setText("Are you a Patient");
+
+        lblseldr.setText("Select your Doctor");
+
+        doctorbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        doctorbox.setSelectedIndex(-1);
+        doctorbox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtageActionPerformed(evt);
+                doctorboxActionPerformed(evt);
+            }
+        });
+
+        lbldoa.setText("Select Appointment");
+
+        patientbox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Yes", "No" }));
+        patientbox.setSelectedIndex(-1);
+        patientbox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                patientboxActionPerformed(evt);
+            }
+        });
+
+        button1.setLabel("Save");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
             }
         });
 
@@ -93,38 +157,52 @@ public class Add_PatientPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
+                .addGap(103, 103, 103)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbldoa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblseldr, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtcity, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbxgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtcontact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(139, 139, 139))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtcity, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtage, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(genderbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtaptdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(doctorbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtseldr, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(patientbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtptorpr, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtcontact, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(238, 238, 238))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(jLabel2))
                     .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -133,7 +211,7 @@ public class Add_PatientPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(cbxgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(genderbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtgender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -143,18 +221,25 @@ public class Add_PatientPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(txtcontact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(308, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtptorpr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(patientbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblseldr)
+                    .addComponent(txtseldr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(doctorbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbldoa)
+                    .addComponent(txtaptdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(159, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtcontactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontactActionPerformed
-        // TODO add your handling code here:
-        //Comment Added
-    }//GEN-LAST:event_txtcontactActionPerformed
-
-    private void txtgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtgenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtgenderActionPerformed
 
     private void txtcityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcityActionPerformed
         // TODO add your handling code here:
@@ -164,19 +249,156 @@ public class Add_PatientPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtageActionPerformed
 
+    private void txtcontactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontactActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcontactActionPerformed
+
+    private void txtseldrActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtseldrActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtseldrActionPerformed
+
+    private void txtgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtgenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtgenderActionPerformed
+
+    private void patientboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientboxActionPerformed
+        // TODO add your handling code here:
+         if(patientbox.getSelectedItem()!=null){
+        String selectedValue = patientbox.getSelectedItem().toString();
+        txtptorpr.setText(selectedValue);
+        if(selectedValue.equals("Yes"))
+        {
+        lblseldr.setVisible(true);
+        doctorbox.setVisible(true);
+        txtseldr.setVisible(true);
+        lblseldr.setVisible(true);
+        lblseldr.setVisible(true);
+        txtaptdate.setVisible(true);
+        }
+        else{
+        lblseldr.setVisible(false);
+        doctorbox.setVisible(false);
+        txtseldr.setVisible(false);
+        lblseldr.setVisible(false);
+        lblseldr.setVisible(false);
+        txtaptdate.setVisible(false);
+        }
+         }
+        
+    }//GEN-LAST:event_patientboxActionPerformed
+
+    private void txtptorprActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtptorprActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtptorprActionPerformed
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        // TODO add your handling code here:
+        String name = txtname.getText();
+        int age = Integer.parseInt(txtage.getText());
+        String gender = txtgender.getText();
+        String city = txtcity.getText();
+        String contact =txtcontact.getText();
+        String selpatient = txtptorpr.getText();
+        String seldoctor = txtseldr.getText();
+        Date aptdate = txtaptdate.getDate();
+      //   String name = "Rish";
+      //  int age = 21;
+      //  String gender = "Other";
+      ///  String city = "Bom";
+      //  String contact ="9998";
+       // String selpatient = "Yes";
+       // String seldoctor = "DOc-1";
+      //  Date aptdate = new Date(12-12-2022);
+        
+        
+          if( name.isEmpty() || gender.isEmpty() 
+               || city.isEmpty() || gender.isEmpty()
+               || contact.isEmpty()
+               || selpatient.isEmpty() || seldoctor.isEmpty() 
+               ){
+        txtname.setText("");
+        txtgender.setText("");
+        txtage.setText("");
+        txtcity.setText("");
+        txtcontact.setText("");
+        txtptorpr.setText("");
+        txtseldr.setText("");
+        genderbox.setSelectedIndex(-1);
+        patientbox.setSelectedIndex(-1);
+        doctorbox.setSelectedIndex(-1);
+       
+                   JOptionPane.showMessageDialog(this, "No Fields should be Empty.");
+       }
+       else{ 
+        Patient ptn = phistory.addNewPatient();
+        
+        ptn.setname(name);
+        ptn.setage(age);
+        ptn.setgender(gender);
+        //ptn.setaptdate(aptdate);
+        ptn.setcity(city);
+        ptn.setcontact(contact);
+        ptn.setselpatient(selpatient);
+        ptn.setseldoctor(seldoctor);
+        
+        JOptionPane.showMessageDialog(this, "New Employee added.");
+       
+    
+    
+        
+        txtname.setText("");
+        txtage.setText("");
+        txtgender.setText("");
+        txtcity.setText("");
+        txtcontact.setText("");
+        txtptorpr.setText("");
+        txtseldr.setText("");
+       // txtaptdate.setDate("");
+       }
+       
+        
+
+    }//GEN-LAST:event_button1ActionPerformed
+
+    private void genderboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderboxActionPerformed
+        // TODO add your handling code here:
+         if(genderbox.getSelectedItem()!=null){
+        String selectedValue = genderbox.getSelectedItem().toString();
+        txtgender.setText(selectedValue);
+         }
+    }//GEN-LAST:event_genderboxActionPerformed
+
+    private void doctorboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorboxActionPerformed
+        // TODO add your handling code here:
+         if(doctorbox.getSelectedItem()!=null){
+        String selectedValue = doctorbox.getSelectedItem().toString();
+        txtseldr.setText(selectedValue);
+         }
+        
+    }//GEN-LAST:event_doctorboxActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cbxgender;
+    private java.awt.Button button1;
+    private javax.swing.JComboBox<String> doctorbox;
+    private javax.swing.JComboBox<String> genderbox;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private java.awt.Label label1;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel lbldoa;
+    private javax.swing.JLabel lblseldr;
+    private javax.swing.JComboBox<String> patientbox;
     private javax.swing.JTextField txtage;
+    private com.toedter.calendar.JDateChooser txtaptdate;
     private javax.swing.JTextField txtcity;
     private javax.swing.JTextField txtcontact;
     private javax.swing.JTextField txtgender;
     private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtptorpr;
+    private javax.swing.JTextField txtseldr;
     // End of variables declaration//GEN-END:variables
 }

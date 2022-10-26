@@ -10,12 +10,12 @@ import Model.Patient;
  *
  * @author 91983
  */
-public class ViewPatientPanel extends javax.swing.JPanel {
+public class ViewPersonPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form UpdatePatientPanel
+     * Creates new form ViewPersonPanel
      */
-    public ViewPatientPanel(Patient phistory) {
+    public ViewPersonPanel(Patient phistory) {
         initComponents();
     }
 
@@ -48,7 +48,7 @@ public class ViewPatientPanel extends javax.swing.JPanel {
 
         label1.setAlignment(java.awt.Label.CENTER);
         label1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        label1.setText("Patient Details");
+        label1.setText("Person Details");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -191,14 +191,6 @@ public class ViewPatientPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtageActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtageActionPerformed
-
-    private void txtcityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcityActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtcityActionPerformed
-
     private void txtgenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtgenderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtgenderActionPerformed
@@ -206,6 +198,14 @@ public class ViewPatientPanel extends javax.swing.JPanel {
     private void txtcontactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcontactActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtcontactActionPerformed
+
+    private void txtcityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcityActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtcityActionPerformed
+
+    private void txtageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtageActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

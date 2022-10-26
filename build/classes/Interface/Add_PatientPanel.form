@@ -22,47 +22,64 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="200" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label1" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel5" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="jLabel6" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="jLabel3" alignment="1" min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="jLabel4" alignment="1" min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="jLabel2" alignment="1" min="-2" pref="37" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="txtname" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="txtcity" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="txtage" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
-                                  <Component id="cbxgender" alignment="1" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txtgender" min="-2" pref="71" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="txtcontact" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Component id="jLabel5" alignment="0" min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="jLabel6" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                  <Component id="lbldoa" alignment="0" min="-2" pref="122" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="jLabel3" alignment="1" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="jLabel4" alignment="1" min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="jLabel2" alignment="1" min="-2" pref="37" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="jLabel7" alignment="1" min="-2" pref="107" max="-2" attributes="0"/>
+                      <Component id="lblseldr" alignment="1" min="-2" pref="107" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="button1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="0" min="-2" pref="269" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="txtname" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtcity" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="txtage" alignment="1" min="-2" pref="71" max="-2" attributes="0"/>
+                          <Component id="genderbox" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="txtgender" min="-2" pref="71" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="txtaptdate" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="doctorbox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="txtseldr" min="-2" pref="71" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="patientbox" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="txtptorpr" min="-2" pref="71" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="txtcontact" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Component id="label1" min="-2" pref="46" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel1" min="-2" pref="27" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="txtname" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -73,7 +90,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cbxgender" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="genderbox" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtgender" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -86,28 +103,65 @@
                   <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtcontact" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="308" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtptorpr" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="patientbox" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblseldr" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtseldr" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="doctorbox" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="lbldoa" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtaptdate" alignment="1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="button1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="159" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="java.awt.Label" name="label1">
+    <Component class="com.toedter.calendar.JDateChooser" name="txtaptdate">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtname">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtcity">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtcityActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="alignment" type="int" value="1"/>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Default Cursor"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dialog" size="24" style="1"/>
+          <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Add Patient"/>
+        <Property name="text" type="java.lang.String" value="                    Person Details"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtage">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtageActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Name"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtptorpr">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtptorprActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
@@ -115,9 +169,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtcontact">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtcontactActionPerformed"/>
       </Events>
@@ -127,15 +178,17 @@
         <Property name="text" type="java.lang.String" value="City"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JTextField" name="txtseldr">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtseldrActionPerformed"/>
+      </Events>
+    </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Gender"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtgender">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtgenderActionPerformed"/>
       </Events>
@@ -145,7 +198,35 @@
         <Property name="text" type="java.lang.String" value="Contact no."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cbxgender">
+    <Component class="javax.swing.JComboBox" name="genderbox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="Male"/>
+            <StringItem index="1" value="Female"/>
+            <StringItem index="2" value="Others"/>
+          </StringArray>
+        </Property>
+        <Property name="selectedIndex" type="int" value="-1"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="genderboxActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Are you a Patient"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblseldr">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Select your Doctor"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="doctorbox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
@@ -155,30 +236,43 @@
             <StringItem index="3" value="Item 4"/>
           </StringArray>
         </Property>
+        <Property name="selectedIndex" type="int" value="-1"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="doctorboxActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtname">
+    <Component class="javax.swing.JLabel" name="lbldoa">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
+        <Property name="text" type="java.lang.String" value="Select Appointment"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtcity">
+    <Component class="javax.swing.JComboBox" name="patientbox">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="2">
+            <StringItem index="0" value="Yes"/>
+            <StringItem index="1" value="No"/>
+          </StringArray>
+        </Property>
+        <Property name="selectedIndex" type="int" value="-1"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtcityActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="patientboxActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtage">
+    <Component class="java.awt.Button" name="button1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="jTextField1"/>
+        <Property name="label" type="java.lang.String" value="Save"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtageActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
