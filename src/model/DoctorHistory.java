@@ -8,6 +8,6 @@ package model;
  *
  * @author Pranav
  */
-public class PatientHistory {
+public class DoctorHistory {
     
 }
