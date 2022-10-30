@@ -4,15 +4,19 @@
  */
 package ui;
 
+import model.DoctorHistory;
 import model.PersonHistory;
+import model.PatientHistory;
 
 
 /**
  *
- * @author Pranav
+ * @author 91983
  */
 public class MainAdminJFrame extends javax.swing.JFrame {
     PersonHistory perHistory ; 
+    DoctorHistory doctorhistory;
+    PatientHistory ptnhistory;
     /**
      * Creates new form MainAdminJFrame
      */
@@ -21,6 +25,8 @@ public class MainAdminJFrame extends javax.swing.JFrame {
     public MainAdminJFrame() {
         initComponents();
         perHistory = new PersonHistory();
+        doctorhistory=new DoctorHistory();
+        ptnhistory=new PatientHistory();
     }
 
     /**
@@ -34,27 +40,28 @@ public class MainAdminJFrame extends javax.swing.JFrame {
 
         splitPane = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
-        btnAdd = new javax.swing.JButton();
-        btnView = new javax.swing.JButton();
+        btnAddperson = new javax.swing.JButton();
+        btnViewperson = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
-        btnView1 = new javax.swing.JButton();
+        btnadddoctor = new javax.swing.JButton();
         btnView2 = new javax.swing.JButton();
-        btnView3 = new javax.swing.JButton();
+        btnviewdoctor = new javax.swing.JButton();
+        btnviewpatient = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnAdd.setText("Add Person");
-        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+        btnAddperson.setText("Add Person");
+        btnAddperson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddActionPerformed(evt);
+                btnAddpersonActionPerformed(evt);
             }
         });
 
-        btnView.setText("Modify Person");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
+        btnViewperson.setText("Modify Person");
+        btnViewperson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
+                btnViewpersonActionPerformed(evt);
             }
         });
 
@@ -65,10 +72,10 @@ public class MainAdminJFrame extends javax.swing.JFrame {
             }
         });
 
-        btnView1.setText("Add Doctor ");
-        btnView1.addActionListener(new java.awt.event.ActionListener() {
+        btnadddoctor.setText("Add Doctor ");
+        btnadddoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnView1ActionPerformed(evt);
+                btnadddoctorActionPerformed(evt);
             }
         });
 
@@ -79,10 +86,17 @@ public class MainAdminJFrame extends javax.swing.JFrame {
             }
         });
 
-        btnView3.setText("Modify Doctor ");
-        btnView3.addActionListener(new java.awt.event.ActionListener() {
+        btnviewdoctor.setText("Modify Doctor ");
+        btnviewdoctor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnView3ActionPerformed(evt);
+                btnviewdoctorActionPerformed(evt);
+            }
+        });
+
+        btnviewpatient.setText("Modify Patient");
+        btnviewpatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnviewpatientActionPerformed(evt);
             }
         });
 
@@ -99,31 +113,34 @@ public class MainAdminJFrame extends javax.swing.JFrame {
                                 .addComponent(btnLogout))
                             .addGroup(controlPanelLayout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnAddperson, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(controlPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnView1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnView2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(btnView3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnViewperson, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnadddoctor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnView2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnviewpatient, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnviewdoctor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         controlPanelLayout.setVerticalGroup(
             controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addComponent(btnAdd)
+                .addComponent(btnAddperson)
                 .addGap(18, 18, 18)
-                .addComponent(btnView)
+                .addComponent(btnViewperson)
                 .addGap(18, 18, 18)
                 .addComponent(btnView2)
+                .addGap(15, 15, 15)
+                .addComponent(btnviewpatient)
                 .addGap(18, 18, 18)
-                .addComponent(btnView1)
-                .addGap(26, 26, 26)
-                .addComponent(btnView3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 297, Short.MAX_VALUE)
+                .addComponent(btnadddoctor)
+                .addGap(18, 18, 18)
+                .addComponent(btnviewdoctor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 310, Short.MAX_VALUE)
                 .addComponent(btnLogout)
                 .addGap(27, 27, 27))
         );
@@ -151,23 +168,23 @@ public class MainAdminJFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(splitPane)
+            .addComponent(splitPane, javax.swing.GroupLayout.DEFAULT_SIZE, 619, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+    private void btnAddpersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddpersonActionPerformed
         // TODO add your handling code here:
           SysAdminCreatePersonPanel acpp = new SysAdminCreatePersonPanel(perHistory);
          splitPane.setRightComponent(acpp);
          
-    }//GEN-LAST:event_btnAddActionPerformed
+    }//GEN-LAST:event_btnAddpersonActionPerformed
 
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+    private void btnViewpersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewpersonActionPerformed
         SysAdminViewPersonPanel savp = new SysAdminViewPersonPanel(perHistory);
         splitPane.setRightComponent(savp);
-    }//GEN-LAST:event_btnViewActionPerformed
+    }//GEN-LAST:event_btnViewpersonActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
@@ -178,17 +195,32 @@ public class MainAdminJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnLogoutActionPerformed
 
-    private void btnView1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnView1ActionPerformed
+    private void btnadddoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnadddoctorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnView1ActionPerformed
+        SysAdminCreateDoctorPanel sacdp = new SysAdminCreateDoctorPanel(perHistory,doctorhistory);
+        splitPane.setRightComponent(sacdp);
+        
+    }//GEN-LAST:event_btnadddoctorActionPerformed
 
     private void btnView2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnView2ActionPerformed
         // TODO add your handling code here:
+        SysAdminCreatePatient sacp = new SysAdminCreatePatient(perHistory,ptnhistory);
+        splitPane.setRightComponent(sacp);
     }//GEN-LAST:event_btnView2ActionPerformed
 
-    private void btnView3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnView3ActionPerformed
+    private void btnviewdoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewdoctorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnView3ActionPerformed
+        SysAdminViewDoctorPanel savdp = new SysAdminViewDoctorPanel(doctorhistory);
+        splitPane.setRightComponent(savdp);
+    
+    }//GEN-LAST:event_btnviewdoctorActionPerformed
+
+    private void btnviewpatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnviewpatientActionPerformed
+        // TODO add your handling code here:
+        SysAdminViewPatient savpt = new SysAdminViewPatient(ptnhistory);
+        splitPane.setRightComponent(savpt);
+
+    }//GEN-LAST:event_btnviewpatientActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,12 +261,13 @@ public class MainAdminJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnAddperson;
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnView;
-    private javax.swing.JButton btnView1;
     private javax.swing.JButton btnView2;
-    private javax.swing.JButton btnView3;
+    private javax.swing.JButton btnViewperson;
+    private javax.swing.JButton btnadddoctor;
+    private javax.swing.JButton btnviewdoctor;
+    private javax.swing.JButton btnviewpatient;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JSplitPane splitPane;
     private javax.swing.JPanel workArea;

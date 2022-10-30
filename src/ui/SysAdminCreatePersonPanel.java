@@ -10,7 +10,7 @@ import model.PersonHistory;
 
 /**
  *
- * @author Pranav
+ * @author 91983
  */
 public class SysAdminCreatePersonPanel extends javax.swing.JPanel {
 
@@ -59,6 +59,12 @@ public class SysAdminCreatePersonPanel extends javax.swing.JPanel {
         jLabel5.setText("City :");
 
         jLabel6.setText("Contact-Number :");
+
+        txtGender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtGenderActionPerformed(evt);
+            }
+        });
 
         btnSubmit.setText("Submit");
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -162,6 +168,10 @@ public class SysAdminCreatePersonPanel extends javax.swing.JPanel {
         txtGender.setText(Gender);
         }
     }//GEN-LAST:event_drpGenderActionPerformed
+
+    private void txtGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtGenderActionPerformed
 
  private void clrfeilds() {
         txtAge.setText("");

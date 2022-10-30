@@ -8,7 +8,7 @@ import model.PersonHistory;
 
 /**
  *
- * @author Pranav
+ * @author 91983
  */
 public class AdminOptions extends javax.swing.JFrame {
 

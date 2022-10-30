@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author Pranav
+ * @author 91983
  */
 public class Person {
     private String Name;

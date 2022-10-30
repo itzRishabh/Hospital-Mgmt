@@ -6,7 +6,7 @@ package model;
 
 /**
  *
- * @author Pranav
+ * @author 91983
  */
 public class Doctor {
     private String Name;
@@ -71,6 +71,10 @@ public class Doctor {
 
     public void setPhoneNumber(String PhoneNumber) {
         this.PhoneNumber = PhoneNumber;
+    }
+      @Override
+    public String toString(){
+        return Name;
     }
 
 

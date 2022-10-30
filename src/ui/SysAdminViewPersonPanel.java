@@ -13,7 +13,7 @@ import model.PersonHistory;
 
 /**
  *
- * @author Pranav
+ * @author 91983
  */
 public class SysAdminViewPersonPanel extends javax.swing.JPanel {
 
