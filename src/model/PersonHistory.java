@@ -36,7 +36,7 @@ public class PersonHistory {
        
    }
    
-   public void updatePerson(Person person , int rowIndex){
+   public void updatedPerson(Person person , int rowIndex){
        personhistory.set(rowIndex,person);
    }
 

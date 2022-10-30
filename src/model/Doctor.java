@@ -14,24 +14,8 @@ public class Doctor {
     private String Gender;
     private String City;
     private String PhoneNumber ;
-    private String Hospital;
-    private String DoctorID;
-
-    public String getHospital() {
-        return Hospital;
-    }
-
-    public void setHospital(String Hospital) {
-        this.Hospital = Hospital;
-    }
-
-    public String getDoctorID() {
-        return DoctorID;
-    }
-
-    public void setDoctorID(String DoctorID) {
-        this.DoctorID = DoctorID;
-    }
+    private String HospName;
+    private String DocId;
 
     public String getName() {
         return Name;
@@ -72,10 +56,24 @@ public class Doctor {
     public void setPhoneNumber(String PhoneNumber) {
         this.PhoneNumber = PhoneNumber;
     }
-      @Override
+
+    public String getHospName() {
+        return HospName;
+    }
+
+    public void setHospName(String HospName) {
+        this.HospName = HospName;
+    }
+
+    public String getDocId() {
+        return DocId;
+    }
+
+    public void setDocId(String DocId) {
+        this.DocId = DocId;
+    }
+    @Override
     public String toString(){
         return Name;
     }
-
-
 }

@@ -5,18 +5,32 @@
 package ui;
 
 import javax.swing.JOptionPane;
-
+import javax.swing.JPanel;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+import model.Doctor;
+import model.Patient;
+import model.Person;
+import model.DoctorHistory;
+import model.PatientHistory;
+import model.PersonHistory;
 /**
  *
  * @author 91983
  */
 public class Login_Page extends javax.swing.JFrame {
-
+    PersonHistory perHistory ;
+    PatientHistory pathistory;
+    DoctorHistory docHistory;
     /**
      * Creates new form Admin_View
      */
-    public Login_Page() {
+    public Login_Page(PersonHistory perHistory, PatientHistory pathistory, DoctorHistory docHistory) {
         initComponents();
+        this.perHistory=perHistory;
+        this.docHistory=docHistory;
+        this.pathistory=pathistory;
     }
 
     /**
@@ -28,16 +42,151 @@ public class Login_Page extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Work_panel = new javax.swing.JPanel();
+        login_panel = new javax.swing.JPanel();
         txtUserId = new javax.swing.JTextField();
         lblUserId = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        lblPassword = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
         btnRegister = new javax.swing.JButton();
+        lblPassword = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        Admin_Options = new javax.swing.JPanel();
+        btnPatient = new javax.swing.JButton();
+        btnDoctor = new javax.swing.JButton();
+        btnPerson = new javax.swing.JButton();
+        btnCommunityAdmin = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        btnback = new javax.swing.JButton();
+        AdminPersonControls = new javax.swing.JPanel();
+        btAddPerson = new javax.swing.JButton();
+        btnPersonD = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        SysAdminCreatePerson = new javax.swing.JPanel();
+        txtCity = new javax.swing.JTextField();
+        txtContactNumber = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        btnSubmit = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        drpGender = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        txtAge = new javax.swing.JTextField();
+        txtGender = new javax.swing.JTextField();
+        SysAdminPersonControls = new javax.swing.JPanel();
+        txtContactNumber1 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        btnView = new javax.swing.JButton();
+        drpGender1 = new javax.swing.JComboBox<>();
+        btnUpdate = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        lblTitleAdmin = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblPerson = new javax.swing.JTable();
+        txtName1 = new javax.swing.JTextField();
+        txtAge1 = new javax.swing.JTextField();
+        btnDelete = new javax.swing.JButton();
+        txtGender1 = new javax.swing.JTextField();
+        lblSearch = new javax.swing.JLabel();
+        txtCity1 = new javax.swing.JTextField();
+        txtSearch = new javax.swing.JTextField();
+        SysAdminCreatePatient = new javax.swing.JPanel();
+        txtContactNumber2 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        txtHouseNo = new javax.swing.JTextField();
+        lblHospName = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblPerson1 = new javax.swing.JTable();
+        jLabel17 = new javax.swing.JLabel();
+        btnAddPatient = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        txtName2 = new javax.swing.JTextField();
+        btnView1 = new javax.swing.JButton();
+        txtAge2 = new javax.swing.JTextField();
+        drpGender2 = new javax.swing.JComboBox<>();
+        txtGender2 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        txtCity2 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        lblHospName1 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        txtStreet = new javax.swing.JTextField();
+        SysAdminPatientControl = new javax.swing.JPanel();
+        txtAge3 = new javax.swing.JTextField();
+        lblTitleDoc = new javax.swing.JLabel();
+        btnDelete1 = new javax.swing.JButton();
+        jLabel22 = new javax.swing.JLabel();
+        lblHospName2 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        btnUpdate1 = new javax.swing.JButton();
+        drpGender3 = new javax.swing.JComboBox<>();
+        txtGender3 = new javax.swing.JTextField();
+        txtHouseNo1 = new javax.swing.JTextField();
+        btnView2 = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        txtStreet1 = new javax.swing.JTextField();
+        txtName3 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblPatient = new javax.swing.JTable();
+        jLabel25 = new javax.swing.JLabel();
+        lblHospName3 = new javax.swing.JLabel();
+        txtCity3 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        txtContactNumber3 = new javax.swing.JTextField();
+        SysAdminCreateDoc = new javax.swing.JPanel();
+        txtAge4 = new javax.swing.JTextField();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblPerson2 = new javax.swing.JTable();
+        txtGender4 = new javax.swing.JTextField();
+        txtCity4 = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
+        txtContactNumber4 = new javax.swing.JTextField();
+        btnView3 = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
+        drpGender4 = new javax.swing.JComboBox<>();
+        txtDocId = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        lblHospName4 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        lblHospName5 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        txtHospName = new javax.swing.JTextField();
+        jLabel32 = new javax.swing.JLabel();
+        btnAddDoctor = new javax.swing.JButton();
+        txtName4 = new javax.swing.JTextField();
+        SysAdminDocControls = new javax.swing.JPanel();
+        btnDelete2 = new javax.swing.JButton();
+        lblHospName6 = new javax.swing.JLabel();
+        btnUpdate2 = new javax.swing.JButton();
+        txtGender5 = new javax.swing.JTextField();
+        btnView4 = new javax.swing.JButton();
+        txtHospName1 = new javax.swing.JTextField();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblDoctor = new javax.swing.JTable();
+        txtCity5 = new javax.swing.JTextField();
+        txtContactNumber5 = new javax.swing.JTextField();
+        lblTitleDoc1 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        drpGender5 = new javax.swing.JComboBox<>();
+        txtDocId1 = new javax.swing.JTextField();
+        jLabel35 = new javax.swing.JLabel();
+        txtName5 = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        lblHospName7 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        txtAge5 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Work_panel.setLayout(new java.awt.CardLayout());
 
         txtUserId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -47,16 +196,10 @@ public class Login_Page extends javax.swing.JFrame {
 
         lblUserId.setText("User-Id :");
 
-        lblPassword.setText("Password :");
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Login Page ");
-
-        jButton1.setText("Log-In");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setText("Log-In");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
 
@@ -67,59 +210,1042 @@ public class Login_Page extends javax.swing.JFrame {
             }
         });
 
+        lblPassword.setText("Password :");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Login Page ");
+
+        javax.swing.GroupLayout login_panelLayout = new javax.swing.GroupLayout(login_panel);
+        login_panel.setLayout(login_panelLayout);
+        login_panelLayout.setHorizontalGroup(
+            login_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, login_panelLayout.createSequentialGroup()
+                .addGap(215, 215, 215)
+                .addGroup(login_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, login_panelLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(214, 214, 214))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, login_panelLayout.createSequentialGroup()
+                        .addGroup(login_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(login_panelLayout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(login_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblUserId, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(login_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtUserId)
+                                    .addComponent(txtPassword)))
+                            .addGroup(login_panelLayout.createSequentialGroup()
+                                .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(313, 313, 313))))
+        );
+        login_panelLayout.setVerticalGroup(
+            login_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(login_panelLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(84, 84, 84)
+                .addGroup(login_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUserId, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(login_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(login_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLogin)
+                    .addComponent(btnRegister))
+                .addContainerGap(414, Short.MAX_VALUE))
+        );
+
+        Work_panel.add(login_panel, "card10");
+
+        btnPatient.setText("Patient");
+        btnPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPatientActionPerformed(evt);
+            }
+        });
+
+        btnDoctor.setText("Doctor");
+
+        btnPerson.setText("Person");
+        btnPerson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPersonActionPerformed(evt);
+            }
+        });
+
+        btnCommunityAdmin.setText("Community Admin");
+        btnCommunityAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCommunityAdminActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 3, 36)); // NOI18N
+        jLabel2.setText("Admin Control Options");
+
+        btnback.setText("Logout");
+        btnback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnbackActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Admin_OptionsLayout = new javax.swing.GroupLayout(Admin_Options);
+        Admin_Options.setLayout(Admin_OptionsLayout);
+        Admin_OptionsLayout.setHorizontalGroup(
+            Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Admin_OptionsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCommunityAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnPerson, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnPatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnDoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(267, 267, 267))
+            .addGroup(Admin_OptionsLayout.createSequentialGroup()
+                .addGroup(Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Admin_OptionsLayout.createSequentialGroup()
+                        .addGap(266, 266, 266)
+                        .addComponent(jLabel2))
+                    .addGroup(Admin_OptionsLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(btnback)))
+                .addGap(19, 228, Short.MAX_VALUE))
+        );
+        Admin_OptionsLayout.setVerticalGroup(
+            Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Admin_OptionsLayout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(jLabel2)
+                .addGap(99, 99, 99)
+                .addGroup(Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPatient)
+                    .addComponent(btnPerson))
+                .addGap(31, 31, 31)
+                .addGroup(Admin_OptionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDoctor)
+                    .addComponent(btnCommunityAdmin))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
+                .addComponent(btnback)
+                .addGap(39, 39, 39))
+        );
+
+        Work_panel.add(Admin_Options, "card3");
+
+        btAddPerson.setText("Add Person");
+        btAddPerson.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAddPersonActionPerformed(evt);
+            }
+        });
+
+        btnPersonD.setText("Person Directory");
+        btnPersonD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPersonDActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("To add a new person click here ⬇");
+
+        jLabel4.setText("To access the person directory click here ⬇");
+
+        javax.swing.GroupLayout AdminPersonControlsLayout = new javax.swing.GroupLayout(AdminPersonControls);
+        AdminPersonControls.setLayout(AdminPersonControlsLayout);
+        AdminPersonControlsLayout.setHorizontalGroup(
+            AdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminPersonControlsLayout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addComponent(btAddPerson)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnPersonD)
+                .addGap(206, 206, 206))
+            .addGroup(AdminPersonControlsLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(163, 163, 163))
+        );
+        AdminPersonControlsLayout.setVerticalGroup(
+            AdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminPersonControlsLayout.createSequentialGroup()
+                .addContainerGap(331, Short.MAX_VALUE)
+                .addGroup(AdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addGap(33, 33, 33)
+                .addGroup(AdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btAddPerson)
+                    .addComponent(btnPersonD))
+                .addGap(341, 341, 341))
+        );
+
+        Work_panel.add(AdminPersonControls, "card4");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 3, 24)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Add a Person ");
+
+        btnSubmit.setText("Submit");
+        btnSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Name :");
+
+        drpGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
+        drpGender.setSelectedIndex(-1);
+        drpGender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drpGenderActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Age :");
+
+        jLabel8.setText("Gender :");
+
+        jLabel9.setText("City :");
+
+        jLabel10.setText("Contact-Number :");
+
+        javax.swing.GroupLayout SysAdminCreatePersonLayout = new javax.swing.GroupLayout(SysAdminCreatePerson);
+        SysAdminCreatePerson.setLayout(SysAdminCreatePersonLayout);
+        SysAdminCreatePersonLayout.setHorizontalGroup(
+            SysAdminCreatePersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminCreatePersonLayout.createSequentialGroup()
+                .addGap(255, 255, 255)
+                .addGroup(SysAdminCreatePersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SysAdminCreatePersonLayout.createSequentialGroup()
+                        .addGroup(SysAdminCreatePersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(SysAdminCreatePersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtName)
+                            .addComponent(txtAge)
+                            .addComponent(txtContactNumber)
+                            .addGroup(SysAdminCreatePersonLayout.createSequentialGroup()
+                                .addComponent(drpGender, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCity)))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(283, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SysAdminCreatePersonLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnSubmit)
+                .addGap(362, 362, 362))
+        );
+        SysAdminCreatePersonLayout.setVerticalGroup(
+            SysAdminCreatePersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminCreatePersonLayout.createSequentialGroup()
+                .addGap(112, 112, 112)
+                .addComponent(jLabel5)
+                .addGap(65, 65, 65)
+                .addGroup(SysAdminCreatePersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminCreatePersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminCreatePersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(drpGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SysAdminCreatePersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(SysAdminCreatePersonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(txtContactNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addComponent(btnSubmit)
+                .addContainerGap(294, Short.MAX_VALUE))
+        );
+
+        Work_panel.add(SysAdminCreatePerson, "card5");
+
+        jLabel11.setText("Name :");
+
+        btnView.setText("View");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
+
+        drpGender1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
+        drpGender1.setSelectedIndex(-1);
+        drpGender1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drpGender1ActionPerformed(evt);
+            }
+        });
+
+        btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setText("Age :");
+
+        jLabel13.setText("Gender :");
+
+        jLabel14.setText("City :");
+
+        lblTitleAdmin.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        lblTitleAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitleAdmin.setText("Control Person Data");
+
+        jLabel15.setText("Contact-Number :");
+
+        tblPerson.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Age", "Gender", "City", "Phone-Number"
+            }
+        ));
+        jScrollPane1.setViewportView(tblPerson);
+
+        btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
+
+        lblSearch.setText("Enter Search String:");
+
+        txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSearchKeyReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SysAdminPersonControlsLayout = new javax.swing.GroupLayout(SysAdminPersonControls);
+        SysAdminPersonControls.setLayout(SysAdminPersonControlsLayout);
+        SysAdminPersonControlsLayout.setHorizontalGroup(
+            SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminPersonControlsLayout.createSequentialGroup()
+                .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SysAdminPersonControlsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblTitleAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 874, Short.MAX_VALUE))
+                    .addGroup(SysAdminPersonControlsLayout.createSequentialGroup()
+                        .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(SysAdminPersonControlsLayout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(SysAdminPersonControlsLayout.createSequentialGroup()
+                                        .addComponent(btnUpdate)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnView)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnDelete))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(SysAdminPersonControlsLayout.createSequentialGroup()
+                                .addGap(114, 114, 114)
+                                .addComponent(lblSearch)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SysAdminPersonControlsLayout.createSequentialGroup()
+                                .addGap(106, 106, 106)
+                                .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtName1)
+                                    .addComponent(txtAge1)
+                                    .addComponent(txtContactNumber1)
+                                    .addGroup(SysAdminPersonControlsLayout.createSequentialGroup()
+                                        .addComponent(drpGender1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtGender1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtCity1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        SysAdminPersonControlsLayout.setVerticalGroup(
+            SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminPersonControlsLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(lblTitleAdmin)
+                .addGap(38, 38, 38)
+                .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblSearch)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnView)
+                        .addComponent(btnUpdate))
+                    .addComponent(btnDelete))
+                .addGap(49, 49, 49)
+                .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(txtName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(txtAge1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(txtGender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(drpGender1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel14)
+                    .addComponent(txtCity1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(SysAdminPersonControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(txtContactNumber1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(131, Short.MAX_VALUE))
+        );
+
+        Work_panel.add(SysAdminPersonControls, "card6");
+
+        jLabel16.setText("Name :");
+
+        lblHospName.setText("Street:");
+
+        tblPerson1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Age", "Gender", "City", "Phone-Number"
+            }
+        ));
+        jScrollPane2.setViewportView(tblPerson1);
+
+        jLabel17.setText("Contact-Number :");
+
+        btnAddPatient.setText("Add Patient");
+        btnAddPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddPatientActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setFont(new java.awt.Font("Helvetica Neue", 3, 24)); // NOI18N
+        jLabel18.setText("Add a Patient from existing Person");
+
+        btnView1.setText("View");
+        btnView1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnView1ActionPerformed(evt);
+            }
+        });
+
+        drpGender2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
+        drpGender2.setSelectedIndex(-1);
+        drpGender2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drpGender2ActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setText("Age :");
+
+        jLabel20.setText("Gender :");
+
+        lblHospName1.setText("House No.:");
+
+        jLabel21.setText("City :");
+
+        javax.swing.GroupLayout SysAdminCreatePatientLayout = new javax.swing.GroupLayout(SysAdminCreatePatient);
+        SysAdminCreatePatient.setLayout(SysAdminCreatePatientLayout);
+        SysAdminCreatePatientLayout.setHorizontalGroup(
+            SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminCreatePatientLayout.createSequentialGroup()
+                .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SysAdminCreatePatientLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SysAdminCreatePatientLayout.createSequentialGroup()
+                                .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtName2)
+                                    .addComponent(txtAge2)
+                                    .addComponent(txtContactNumber2)
+                                    .addGroup(SysAdminCreatePatientLayout.createSequentialGroup()
+                                        .addComponent(drpGender2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtGender2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtCity2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(SysAdminCreatePatientLayout.createSequentialGroup()
+                                        .addGap(248, 248, 248)
+                                        .addComponent(btnAddPatient)
+                                        .addGap(29, 29, 29)
+                                        .addComponent(btnView1))
+                                    .addGroup(SysAdminCreatePatientLayout.createSequentialGroup()
+                                        .addGap(88, 88, 88)
+                                        .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblHospName1)
+                                            .addComponent(lblHospName))
+                                        .addGap(41, 41, 41)
+                                        .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtStreet, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                                            .addComponent(txtHouseNo)))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 712, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(SysAdminCreatePatientLayout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(jLabel18)))
+                .addContainerGap(143, Short.MAX_VALUE))
+        );
+        SysAdminCreatePatientLayout.setVerticalGroup(
+            SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminCreatePatientLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SysAdminCreatePatientLayout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblHospName)
+                            .addComponent(txtStreet, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(SysAdminCreatePatientLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnView1)
+                            .addComponent(btnAddPatient))
+                        .addGap(11, 11, 11)
+                        .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel16)
+                            .addComponent(txtName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(txtAge2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblHospName1)
+                    .addComponent(txtHouseNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(txtGender2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(drpGender2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel21)
+                    .addComponent(txtCity2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(SysAdminCreatePatientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(txtContactNumber2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(257, Short.MAX_VALUE))
+        );
+
+        Work_panel.add(SysAdminCreatePatient, "card7");
+
+        lblTitleDoc.setFont(new java.awt.Font("Helvetica Neue", 3, 36)); // NOI18N
+        lblTitleDoc.setText("Control Patient Directory");
+
+        btnDelete1.setText("Delete");
+        btnDelete1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelete1ActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setText("Name :");
+
+        lblHospName2.setText("House No.:");
+
+        jLabel23.setText("Contact-Number :");
+
+        btnUpdate1.setText("Update");
+        btnUpdate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdate1ActionPerformed(evt);
+            }
+        });
+
+        drpGender3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
+        drpGender3.setSelectedIndex(-1);
+        drpGender3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drpGender3ActionPerformed(evt);
+            }
+        });
+
+        btnView2.setText("View");
+        btnView2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnView2ActionPerformed(evt);
+            }
+        });
+
+        jLabel24.setText("Age :");
+
+        tblPatient.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Age", "Gender", "City", "Phone-Number", "Street", "House No."
+            }
+        ));
+        jScrollPane3.setViewportView(tblPatient);
+
+        jLabel25.setText("Gender :");
+
+        lblHospName3.setText("Street:");
+
+        jLabel26.setText("City :");
+
+        javax.swing.GroupLayout SysAdminPatientControlLayout = new javax.swing.GroupLayout(SysAdminPatientControl);
+        SysAdminPatientControl.setLayout(SysAdminPatientControlLayout);
+        SysAdminPatientControlLayout.setHorizontalGroup(
+            SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminPatientControlLayout.createSequentialGroup()
+                .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SysAdminPatientControlLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(SysAdminPatientControlLayout.createSequentialGroup()
+                                .addComponent(btnUpdate1)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnView2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnDelete1))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(SysAdminPatientControlLayout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(lblTitleDoc))
+                    .addGroup(SysAdminPatientControlLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel24, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel23, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtName3)
+                            .addComponent(txtAge3)
+                            .addComponent(txtContactNumber3)
+                            .addGroup(SysAdminPatientControlLayout.createSequentialGroup()
+                                .addComponent(drpGender3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtGender3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCity3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(88, 88, 88)
+                        .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblHospName2)
+                            .addComponent(lblHospName3))
+                        .addGap(41, 41, 41)
+                        .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtStreet1)
+                            .addComponent(txtHouseNo1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(112, Short.MAX_VALUE))
+        );
+        SysAdminPatientControlLayout.setVerticalGroup(
+            SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminPatientControlLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(lblTitleDoc)
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDelete1)
+                    .addComponent(btnView2)
+                    .addComponent(btnUpdate1))
+                .addGap(53, 53, 53)
+                .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SysAdminPatientControlLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblHospName3)
+                            .addComponent(txtStreet1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel22)
+                        .addComponent(txtName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(txtAge3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblHospName2)
+                    .addComponent(txtHouseNo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(txtGender3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(drpGender3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel26)
+                    .addComponent(txtCity3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(SysAdminPatientControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(txtContactNumber3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(149, Short.MAX_VALUE))
+        );
+
+        Work_panel.add(SysAdminPatientControl, "card8");
+
+        tblPerson2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Age", "Gender", "City", "Phone-Number"
+            }
+        ));
+        jScrollPane4.setViewportView(tblPerson2);
+
+        jLabel27.setFont(new java.awt.Font("Helvetica Neue", 3, 24)); // NOI18N
+        jLabel27.setText("Add a Doctor from existing Person");
+
+        btnView3.setText("View");
+        btnView3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnView3ActionPerformed(evt);
+            }
+        });
+
+        jLabel28.setText("Name :");
+
+        drpGender4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
+        drpGender4.setSelectedIndex(-1);
+        drpGender4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drpGender4ActionPerformed(evt);
+            }
+        });
+
+        jLabel29.setText("Age :");
+
+        lblHospName4.setText("Hospital Name:");
+
+        jLabel30.setText("Gender :");
+
+        lblHospName5.setText("Doctor ID:");
+
+        jLabel31.setText("City :");
+
+        jLabel32.setText("Contact-Number :");
+
+        btnAddDoctor.setText("Add Doctor");
+        btnAddDoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDoctorActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout SysAdminCreateDocLayout = new javax.swing.GroupLayout(SysAdminCreateDoc);
+        SysAdminCreateDoc.setLayout(SysAdminCreateDocLayout);
+        SysAdminCreateDocLayout.setHorizontalGroup(
+            SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminCreateDocLayout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SysAdminCreateDocLayout.createSequentialGroup()
+                            .addComponent(btnAddDoctor)
+                            .addGap(29, 29, 29)
+                            .addComponent(btnView3))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(SysAdminCreateDocLayout.createSequentialGroup()
+                                .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel29, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel28, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel30, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtName4)
+                                    .addComponent(txtAge4)
+                                    .addComponent(txtContactNumber4)
+                                    .addGroup(SysAdminCreateDocLayout.createSequentialGroup()
+                                        .addComponent(drpGender4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtGender4, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtCity4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(88, 88, 88)
+                                .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblHospName5)
+                                    .addComponent(lblHospName4))
+                                .addGap(41, 41, 41)
+                                .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtDocId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 712, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(SysAdminCreateDocLayout.createSequentialGroup()
+                        .addGap(149, 149, 149)
+                        .addComponent(jLabel27)))
+                .addContainerGap(109, Short.MAX_VALUE))
+        );
+        SysAdminCreateDocLayout.setVerticalGroup(
+            SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminCreateDocLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnView3)
+                    .addComponent(btnAddDoctor))
+                .addGap(31, 31, 31)
+                .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SysAdminCreateDocLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblHospName4)
+                            .addComponent(txtHospName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel28)
+                        .addComponent(txtName4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(txtAge4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblHospName5)
+                    .addComponent(txtDocId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(txtGender4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(drpGender4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel31)
+                    .addComponent(txtCity4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(SysAdminCreateDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(txtContactNumber4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
+
+        Work_panel.add(SysAdminCreateDoc, "card9");
+
+        btnDelete2.setText("Delete");
+        btnDelete2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDelete2ActionPerformed(evt);
+            }
+        });
+
+        lblHospName6.setText("Doctor ID:");
+
+        btnUpdate2.setText("Update");
+        btnUpdate2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdate2ActionPerformed(evt);
+            }
+        });
+
+        btnView4.setText("View");
+        btnView4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnView4ActionPerformed(evt);
+            }
+        });
+
+        tblDoctor.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Age", "Gender", "City", "Phone-Number", "Hospital Name", "Doctor ID"
+            }
+        ));
+        jScrollPane5.setViewportView(tblDoctor);
+
+        lblTitleDoc1.setFont(new java.awt.Font("Helvetica Neue", 3, 36)); // NOI18N
+        lblTitleDoc1.setText("Control Doctor Directory");
+
+        jLabel33.setText("Name :");
+
+        jLabel34.setText("Contact-Number :");
+
+        drpGender5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Others" }));
+        drpGender5.setSelectedIndex(-1);
+        drpGender5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                drpGender5ActionPerformed(evt);
+            }
+        });
+
+        jLabel35.setText("Age :");
+
+        jLabel36.setText("Gender :");
+
+        lblHospName7.setText("Hospital Name:");
+
+        jLabel37.setText("City :");
+
+        javax.swing.GroupLayout SysAdminDocControlsLayout = new javax.swing.GroupLayout(SysAdminDocControls);
+        SysAdminDocControls.setLayout(SysAdminDocControlsLayout);
+        SysAdminDocControlsLayout.setHorizontalGroup(
+            SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminDocControlsLayout.createSequentialGroup()
+                .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(SysAdminDocControlsLayout.createSequentialGroup()
+                            .addComponent(btnUpdate2)
+                            .addGap(18, 18, 18)
+                            .addComponent(btnView4)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btnDelete2))
+                        .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(SysAdminDocControlsLayout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 751, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(SysAdminDocControlsLayout.createSequentialGroup()
+                                .addGap(60, 60, 60)
+                                .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel35, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel33, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel37, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel34, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtName5)
+                                    .addComponent(txtAge5)
+                                    .addComponent(txtContactNumber5)
+                                    .addGroup(SysAdminDocControlsLayout.createSequentialGroup()
+                                        .addComponent(drpGender5, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtGender5, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtCity5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(88, 88, 88)
+                                .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblHospName6)
+                                    .addComponent(lblHospName7))
+                                .addGap(41, 41, 41)
+                                .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtHospName1, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                                    .addComponent(txtDocId1)))))
+                    .addGroup(SysAdminDocControlsLayout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(lblTitleDoc1)))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        SysAdminDocControlsLayout.setVerticalGroup(
+            SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SysAdminDocControlsLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(lblTitleDoc1)
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDelete2)
+                    .addComponent(btnView4)
+                    .addComponent(btnUpdate2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SysAdminDocControlsLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblHospName7)
+                            .addComponent(txtHospName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel33)
+                        .addComponent(txtName5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(txtAge5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblHospName6)
+                    .addComponent(txtDocId1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(txtGender5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(drpGender5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel37)
+                    .addComponent(txtCity5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(SysAdminDocControlsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(txtContactNumber5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
+        );
+
+        Work_panel.add(SysAdminDocControls, "card10");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(156, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnRegister)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lblUserId)
-                                .addGap(113, 113, 113))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblPassword)
-                                .addGap(99, 99, 99)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtUserId)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(240, 240, 240))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(292, 292, 292)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Work_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(304, 304, 304)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(196, 196, 196)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblUserId))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblPassword)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegister)
-                    .addComponent(jButton1))
-                .addContainerGap(167, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(55, Short.MAX_VALUE)
+                .addComponent(Work_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         pack();
@@ -129,14 +1255,12 @@ public class Login_Page extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserIdActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         String UserID = txtUserId.getText();
         String Password = txtUserId.getText();
         if(UserID.equals("admin") && Password.equals("admin")){
-          AdminOptions ao = new AdminOptions();
-          ao.setVisible(true);
-          dispose();
+          switchpane(Admin_Options);
         }        
         else if( UserID.equals("doctor") && Password.equals("doctor")){
            
@@ -144,22 +1268,462 @@ public class Login_Page extends javax.swing.JFrame {
         else if( UserID.equals("communityadmin") && Password.equals("communityadmin")){
             
         }
-        else  {
+        else {
            JOptionPane.showMessageDialog(this, "Invalid Username or Passowrd ","Error",JOptionPane.ERROR_MESSAGE); 
            txtUserId.setText("");
            txtPassword.setText("");
-           dispose();
         }
         // comment 
                         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         // TODO add your handling code here:
-        MainAdminJFrame maj = new MainAdminJFrame();
-        maj.setVisible(true);
-        dispose();
+        
     }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPatientActionPerformed
+
+    private void btnPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonActionPerformed
+        // TODO add your handling code here:
+        switchpane(AdminPersonControls);
+    }//GEN-LAST:event_btnPersonActionPerformed
+
+    private void btnCommunityAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCommunityAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCommunityAdminActionPerformed
+
+    private void btAddPersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAddPersonActionPerformed
+        // TODO add your handling code here:
+        switchpane(SysAdminCreatePerson);
+    }//GEN-LAST:event_btAddPersonActionPerformed
+
+    private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
+        // TODO add your handling code here:
+        String Name = txtName.getText();
+        String Age = txtAge.getText();
+        String Gender = txtGender.getText();
+        String City = txtCity.getText();
+        String ContactNumber = txtContactNumber.getText();
+        Person p = perHistory.addNewPerson();
+        p.setAge(Age);
+        p.setCity(City);
+        p.setGender(Gender);
+        p.setName(Name);
+        p.setPhoneNumber(ContactNumber);
+        JOptionPane.showMessageDialog(this, "Person has been created !! ");
+        clrfeilds();
+    }//GEN-LAST:event_btnSubmitActionPerformed
+
+    private void drpGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpGenderActionPerformed
+        // TODO add your handling code here:
+        if(drpGender.getSelectedItem() != null){
+            String Gender = drpGender.getSelectedItem().toString();
+            txtGender.setText(Gender);
+        }
+    }//GEN-LAST:event_drpGenderActionPerformed
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndedx = tblPerson.getSelectedRow();
+
+        if(selectedRowIndedx<0){
+
+            JOptionPane.showMessageDialog(this, "Please select a row to view details.");
+            return;
+        }
+
+        DefaultTableModel model  = (DefaultTableModel) tblPerson.getModel();
+        Person selectedPerson = (Person)model.getValueAt(selectedRowIndedx , 0);
+
+        txtName.setText(selectedPerson.getName());
+        txtAge.setText(selectedPerson.getAge());
+        txtGender.setText(selectedPerson.getGender());
+        txtCity.setText(selectedPerson.getCity());
+        txtContactNumber.setText(selectedPerson.getPhoneNumber());
+    }//GEN-LAST:event_btnViewActionPerformed
+
+    private void drpGender1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpGender1ActionPerformed
+        // TODO add your handling code here:
+        if(drpGender.getSelectedItem() != null){
+            String Gender = drpGender.getSelectedItem().toString();
+            txtGender.setText(Gender);
+        }
+    }//GEN-LAST:event_drpGender1ActionPerformed
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndedx = tblPerson.getSelectedRow();
+
+        if(selectedRowIndedx<0){
+
+            JOptionPane.showMessageDialog(this, "Please select a row to update details.");
+            return;
+        }
+        DefaultTableModel model  = (DefaultTableModel) tblPerson.getModel();
+        Person selectedPerson = (Person)model.getValueAt(selectedRowIndedx , 0);
+
+        if(tblPerson.getSelectedRowCount() == 1){
+            String Name = txtName.getText();
+            String Age = txtAge.getText();
+            String Gender = txtGender.getText();
+            String City = txtCity.getText();
+            String ContactNumber = txtContactNumber.getText();
+
+            selectedPerson.setName(Name);
+            selectedPerson.setAge(Age);
+            selectedPerson.setGender(Gender);
+            selectedPerson.setCity(City);
+            selectedPerson.setPhoneNumber(ContactNumber);
+
+            perHistory.updatedPerson(selectedPerson, selectedRowIndedx);
+            populatePersonTable();
+
+            txtAge.setText("");
+            txtCity.setText("");
+            txtContactNumber.setText("");
+            txtGender.setText("");
+            txtName.setText("");
+            drpGender.setSelectedIndex(-1);
+
+        } else{
+            if(tblPerson.getSelectedRowCount() == 0){
+                JOptionPane.showMessageDialog(this, "Table is empty.");
+            }else{
+                JOptionPane.showMessageDialog(this, "Please select a row to update.");
+            }
+        }
+    }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblPerson.getSelectedRow();
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this,"Please Selecta row to delete");
+            return ;
+        }
+
+        DefaultTableModel model  = (DefaultTableModel) tblPerson.getModel();
+        Person selectedPerson = (Person)model.getValueAt(selectedRowIndex, 0);
+
+        perHistory.deletePerson(selectedPerson);
+        JOptionPane.showMessageDialog(this,"Employee Deleted !! ");
+        populatePersonTable();
+
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void txtSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyReleased
+        // TODO add your handling code here:
+        String searchString = txtSearch.getText();
+        Search(searchString);
+    }//GEN-LAST:event_txtSearchKeyReleased
+
+    private void btnAddPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPatientActionPerformed
+        // TODO add your handling code here:
+        String Name = txtName.getText();
+        String Age = txtAge.getText();
+        String Gender = txtGender.getText();
+        String City = txtCity.getText();
+        String ContactNumber = txtContactNumber.getText();
+        String Street = txtStreet.getText();
+        String HouseNo = txtHouseNo.getText();
+
+        Patient pat = pathistory.addNewPatient();
+        pat.setAge(Age);
+        pat.setGender(Gender);
+        pat.setCity(City);
+        pat.setName(Name);
+        pat.setPhoneNumber(ContactNumber);
+        pat.setStreet(Street);
+        pat.setHouseNo(HouseNo);
+        JOptionPane.showMessageDialog(this, "Person has been created !! ");
+        clrfeilds();
+        deleterowfromPersonTable();
+    }//GEN-LAST:event_btnAddPatientActionPerformed
+
+    private void btnView1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnView1ActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndedx = tblPerson.getSelectedRow();
+
+        if(selectedRowIndedx<0){
+
+            JOptionPane.showMessageDialog(this, "Please select a row to view details.");
+            return;
+        }
+
+        DefaultTableModel model  = (DefaultTableModel) tblPerson.getModel();
+        Person selectedPerson = (Person)model.getValueAt(selectedRowIndedx , 0);
+
+        txtName.setText(selectedPerson.getName());
+        txtAge.setText(selectedPerson.getAge());
+        txtGender.setText(selectedPerson.getGender());
+        txtCity.setText(selectedPerson.getCity());
+        txtContactNumber.setText(selectedPerson.getPhoneNumber());
+    }//GEN-LAST:event_btnView1ActionPerformed
+
+    private void drpGender2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpGender2ActionPerformed
+        // TODO add your handling code here:
+        if(drpGender.getSelectedItem() != null){
+            String Gender = drpGender.getSelectedItem().toString();
+            txtGender.setText(Gender);
+        }
+    }//GEN-LAST:event_drpGender2ActionPerformed
+
+    private void btnDelete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelete1ActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblPatient.getSelectedRow();
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this,"Please Selecta row to delete");
+            return ;
+        }
+
+        DefaultTableModel model  = (DefaultTableModel) tblPatient.getModel();
+        Patient selectedPatient = (Patient)model.getValueAt(selectedRowIndex, 0);
+
+        pathistory.deletePatient(selectedPatient);
+        JOptionPane.showMessageDialog(this,"Employee Deleted !! ");
+        populatePatientTable();
+    }//GEN-LAST:event_btnDelete1ActionPerformed
+
+    private void btnUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate1ActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblPatient.getSelectedRow();
+
+        if(selectedRowIndex<0){
+
+            JOptionPane.showMessageDialog(this, "Please select a row to update details.");
+            return;
+        }
+        DefaultTableModel model  = (DefaultTableModel) tblPatient.getModel();
+        Patient selectedPatient = (Patient)model.getValueAt(selectedRowIndex, 0);
+
+        if(tblPatient.getSelectedRowCount() == 1){
+            String Name = txtName.getText();
+            String Age = txtAge.getText();
+            String Gender = txtGender.getText();
+            String City = txtCity.getText();
+            String ContactNumber = txtContactNumber.getText();
+            String Street = txtStreet.getText();
+            String HouseNo = txtHouseNo.getText();
+
+            selectedPatient.setName(Name);
+            selectedPatient.setAge(Age);
+            selectedPatient.setGender(Gender);
+            selectedPatient.setCity(City);
+            selectedPatient.setPhoneNumber(ContactNumber);
+            selectedPatient.setStreet(Street);
+            selectedPatient.setHouseNo(HouseNo);
+
+            pathistory.updatedPatient(selectedPatient, selectedRowIndex);
+            populatePatientTable();
+
+            txtAge.setText("");
+            txtCity.setText("");
+            txtContactNumber.setText("");
+            txtGender.setText("");
+            txtName.setText("");
+            drpGender.setSelectedIndex(-1);
+            txtStreet.setText("");
+            txtHouseNo.setText("");
+
+        } else{
+            if(tblPatient.getSelectedRowCount() == 0){
+                JOptionPane.showMessageDialog(this, "Table is empty.");
+            }else{
+                JOptionPane.showMessageDialog(this, "Please select a row to update.");
+            }
+        }
+    }//GEN-LAST:event_btnUpdate1ActionPerformed
+
+    private void drpGender3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpGender3ActionPerformed
+        // TODO add your handling code here:
+        if(drpGender.getSelectedItem() != null){
+            String Gender = drpGender.getSelectedItem().toString();
+            txtGender.setText(Gender);
+        }
+    }//GEN-LAST:event_drpGender3ActionPerformed
+
+    private void btnView2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnView2ActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblPatient.getSelectedRow();
+
+        if(selectedRowIndex<0){
+
+            JOptionPane.showMessageDialog(this, "Please select a row to view details.");
+            return;
+        }
+
+        DefaultTableModel model  = (DefaultTableModel) tblPatient.getModel();
+        Patient selectedPatient = (Patient)model.getValueAt(selectedRowIndex, 0);
+
+        txtName.setText(selectedPatient.getName());
+        txtAge.setText(selectedPatient.getAge());
+        txtGender.setText(selectedPatient.getGender());
+        txtCity.setText(selectedPatient.getCity());
+        txtContactNumber.setText(selectedPatient.getPhoneNumber());
+        txtStreet.setText(selectedPatient.getStreet());
+        txtHouseNo.setText(selectedPatient.getHouseNo());
+    }//GEN-LAST:event_btnView2ActionPerformed
+
+    private void btnView3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnView3ActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndedx = tblPerson.getSelectedRow();
+
+        if(selectedRowIndedx<0){
+
+            JOptionPane.showMessageDialog(this, "Please select a row to view details.");
+            return;
+        }
+
+        DefaultTableModel model  = (DefaultTableModel) tblPerson.getModel();
+        Person selectedPerson = (Person)model.getValueAt(selectedRowIndedx , 0);
+
+        txtName.setText(selectedPerson.getName());
+        txtAge.setText(selectedPerson.getAge());
+        txtGender.setText(selectedPerson.getGender());
+        txtCity.setText(selectedPerson.getCity());
+        txtContactNumber.setText(selectedPerson.getPhoneNumber());
+    }//GEN-LAST:event_btnView3ActionPerformed
+
+    private void drpGender4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpGender4ActionPerformed
+        // TODO add your handling code here:
+        if(drpGender.getSelectedItem() != null){
+            String Gender = drpGender.getSelectedItem().toString();
+            txtGender.setText(Gender);
+        }
+    }//GEN-LAST:event_drpGender4ActionPerformed
+
+    private void btnAddDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDoctorActionPerformed
+        // TODO add your handling code here:
+        String Name = txtName.getText();
+        String Age = txtAge.getText();
+        String Gender = txtGender.getText();
+        String City = txtCity.getText();
+        String ContactNumber = txtContactNumber.getText();
+        String HospName = txtHospName.getText();
+        String DocId = txtDocId.getText();
+
+        Doctor d = docHistory.addNewDoctor();
+        d.setAge(Age);
+        d.setGender(Gender);
+        d.setCity(City);
+        d.setName(Name);
+        d.setPhoneNumber(ContactNumber);
+        d.setDocId(DocId);
+        d.setHospName(HospName);
+        JOptionPane.showMessageDialog(this, "Doctor has been created !! ");
+        clrfeilds();
+        deleterowfromPersonTable();
+
+    }//GEN-LAST:event_btnAddDoctorActionPerformed
+
+    private void btnDelete2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDelete2ActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblDoctor.getSelectedRow();
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this,"Please Selecta row to delete");
+            return ;
+        }
+
+        DefaultTableModel model  = (DefaultTableModel) tblDoctor.getModel();
+        Doctor selectedDoctor = (Doctor)model.getValueAt(selectedRowIndex, 0);
+
+        docHistory.deleteDoctor(selectedDoctor);
+        JOptionPane.showMessageDialog(this,"Employee Deleted !! ");
+        populateDoctorTable();
+    }//GEN-LAST:event_btnDelete2ActionPerformed
+
+    private void btnUpdate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate2ActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndedx = tblDoctor.getSelectedRow();
+
+        if(selectedRowIndedx<0){
+
+            JOptionPane.showMessageDialog(this, "Please select a row to update details.");
+            return;
+        }
+        DefaultTableModel model  = (DefaultTableModel) tblDoctor.getModel();
+        Doctor selectedDoctor = (Doctor)model.getValueAt(selectedRowIndedx , 0);
+
+        if(tblDoctor.getSelectedRowCount() == 1){
+            String Name = txtName.getText();
+            String Age = txtAge.getText();
+            String Gender = txtGender.getText();
+            String City = txtCity.getText();
+            String ContactNumber = txtContactNumber.getText();
+            String HospName = txtHospName.getText();
+            String DocId = txtDocId.getText();
+
+            selectedDoctor.setName(Name);
+            selectedDoctor.setAge(Age);
+            selectedDoctor.setGender(Gender);
+            selectedDoctor.setCity(City);
+            selectedDoctor.setPhoneNumber(ContactNumber);
+            selectedDoctor.setHospName(HospName);
+            selectedDoctor.setDocId(DocId);
+
+            docHistory.updatedDoctor(selectedDoctor, selectedRowIndedx);
+            populateDoctorTable();
+
+            txtAge.setText("");
+            txtCity.setText("");
+            txtContactNumber.setText("");
+            txtGender.setText("");
+            txtName.setText("");
+            drpGender.setSelectedIndex(-1);
+            txtHospName.setText("");
+            txtDocId.setText("");
+
+        } else{
+            if(tblDoctor.getSelectedRowCount() == 0){
+                JOptionPane.showMessageDialog(this, "Table is empty.");
+            }else{
+                JOptionPane.showMessageDialog(this, "Please select a row to update.");
+            }
+        }
+    }//GEN-LAST:event_btnUpdate2ActionPerformed
+
+    private void btnView4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnView4ActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndedx = tblDoctor.getSelectedRow();
+
+        if(selectedRowIndedx<0){
+
+            JOptionPane.showMessageDialog(this, "Please select a row to view details.");
+            return;
+        }
+
+        DefaultTableModel model  = (DefaultTableModel) tblDoctor.getModel();
+        Doctor selectedDoctor = (Doctor)model.getValueAt(selectedRowIndedx , 0);
+
+        txtName.setText(selectedDoctor.getName());
+        txtAge.setText(selectedDoctor.getAge());
+        txtGender.setText(selectedDoctor.getGender());
+        txtCity.setText(selectedDoctor.getCity());
+        txtContactNumber.setText(selectedDoctor.getPhoneNumber());
+        txtHospName.setText(selectedDoctor.getHospName());
+        txtDocId.setText(selectedDoctor.getDocId());
+    }//GEN-LAST:event_btnView4ActionPerformed
+
+    private void drpGender5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_drpGender5ActionPerformed
+        // TODO add your handling code here:
+        if(drpGender.getSelectedItem() != null){
+            String Gender = drpGender.getSelectedItem().toString();
+            txtGender.setText(Gender);
+        }
+    }//GEN-LAST:event_drpGender5ActionPerformed
+
+    private void btnbackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbackActionPerformed
+        // TODO add your handling code here:
+        switchpane(login_panel);
+    }//GEN-LAST:event_btnbackActionPerformed
+
+    private void btnPersonDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPersonDActionPerformed
+        // TODO add your handling code here:
+        switchpane(SysAdminPatientControl);
+    }//GEN-LAST:event_btnPersonDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,21 +1754,245 @@ public class Login_Page extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+          PersonHistory perHistory = new PersonHistory() ;
+            PatientHistory pathistory = new PatientHistory();
+            DoctorHistory docHistory = new DoctorHistory();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login_Page().setVisible(true);
+                new Login_Page(perHistory,pathistory,docHistory).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AdminPersonControls;
+    private javax.swing.JPanel Admin_Options;
+    private javax.swing.JPanel SysAdminCreateDoc;
+    private javax.swing.JPanel SysAdminCreatePatient;
+    private javax.swing.JPanel SysAdminCreatePerson;
+    private javax.swing.JPanel SysAdminDocControls;
+    private javax.swing.JPanel SysAdminPatientControl;
+    private javax.swing.JPanel SysAdminPersonControls;
+    private javax.swing.JPanel Work_panel;
+    private javax.swing.JButton btAddPerson;
+    private javax.swing.JButton btnAddDoctor;
+    private javax.swing.JButton btnAddPatient;
+    private javax.swing.JButton btnCommunityAdmin;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnDelete1;
+    private javax.swing.JButton btnDelete2;
+    private javax.swing.JButton btnDoctor;
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnPatient;
+    private javax.swing.JButton btnPerson;
+    private javax.swing.JButton btnPersonD;
     private javax.swing.JButton btnRegister;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSubmit;
+    private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnUpdate1;
+    private javax.swing.JButton btnUpdate2;
+    private javax.swing.JButton btnView;
+    private javax.swing.JButton btnView1;
+    private javax.swing.JButton btnView2;
+    private javax.swing.JButton btnView3;
+    private javax.swing.JButton btnView4;
+    private javax.swing.JButton btnback;
+    private javax.swing.JComboBox<String> drpGender;
+    private javax.swing.JComboBox<String> drpGender1;
+    private javax.swing.JComboBox<String> drpGender2;
+    private javax.swing.JComboBox<String> drpGender3;
+    private javax.swing.JComboBox<String> drpGender4;
+    private javax.swing.JComboBox<String> drpGender5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JLabel lblHospName;
+    private javax.swing.JLabel lblHospName1;
+    private javax.swing.JLabel lblHospName2;
+    private javax.swing.JLabel lblHospName3;
+    private javax.swing.JLabel lblHospName4;
+    private javax.swing.JLabel lblHospName5;
+    private javax.swing.JLabel lblHospName6;
+    private javax.swing.JLabel lblHospName7;
     private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblSearch;
+    private javax.swing.JLabel lblTitleAdmin;
+    private javax.swing.JLabel lblTitleDoc;
+    private javax.swing.JLabel lblTitleDoc1;
     private javax.swing.JLabel lblUserId;
+    private javax.swing.JPanel login_panel;
+    private javax.swing.JTable tblDoctor;
+    private javax.swing.JTable tblPatient;
+    private javax.swing.JTable tblPerson;
+    private javax.swing.JTable tblPerson1;
+    private javax.swing.JTable tblPerson2;
+    private javax.swing.JTextField txtAge;
+    private javax.swing.JTextField txtAge1;
+    private javax.swing.JTextField txtAge2;
+    private javax.swing.JTextField txtAge3;
+    private javax.swing.JTextField txtAge4;
+    private javax.swing.JTextField txtAge5;
+    private javax.swing.JTextField txtCity;
+    private javax.swing.JTextField txtCity1;
+    private javax.swing.JTextField txtCity2;
+    private javax.swing.JTextField txtCity3;
+    private javax.swing.JTextField txtCity4;
+    private javax.swing.JTextField txtCity5;
+    private javax.swing.JTextField txtContactNumber;
+    private javax.swing.JTextField txtContactNumber1;
+    private javax.swing.JTextField txtContactNumber2;
+    private javax.swing.JTextField txtContactNumber3;
+    private javax.swing.JTextField txtContactNumber4;
+    private javax.swing.JTextField txtContactNumber5;
+    private javax.swing.JTextField txtDocId;
+    private javax.swing.JTextField txtDocId1;
+    private javax.swing.JTextField txtGender;
+    private javax.swing.JTextField txtGender1;
+    private javax.swing.JTextField txtGender2;
+    private javax.swing.JTextField txtGender3;
+    private javax.swing.JTextField txtGender4;
+    private javax.swing.JTextField txtGender5;
+    private javax.swing.JTextField txtHospName;
+    private javax.swing.JTextField txtHospName1;
+    private javax.swing.JTextField txtHouseNo;
+    private javax.swing.JTextField txtHouseNo1;
+    private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtName1;
+    private javax.swing.JTextField txtName2;
+    private javax.swing.JTextField txtName3;
+    private javax.swing.JTextField txtName4;
+    private javax.swing.JTextField txtName5;
     private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtSearch;
+    private javax.swing.JTextField txtStreet;
+    private javax.swing.JTextField txtStreet1;
     private javax.swing.JTextField txtUserId;
     // End of variables declaration//GEN-END:variables
+
+public void switchpane(JPanel p){ 
+    Work_panel.removeAll();
+    Work_panel.add(p);
+    Work_panel.repaint();
+    Work_panel.revalidate();
+}
+
+private void Search(String str){
+    DefaultTableModel model = (DefaultTableModel) tblPerson.getModel();
+    TableRowSorter<DefaultTableModel> trs = new TableRowSorter<>(model);
+     tblPerson.setRowSorter(trs);
+    trs.setRowFilter(RowFilter.regexFilter(str)); 
+}
+
+public void populatePersonTable(){
+         DefaultTableModel model = (DefaultTableModel) tblPerson.getModel();
+        model.setRowCount(0);
+         
+        for(Person p : perHistory.getPersonhistory()){
+            Object[] row = new Object[6];
+            row[0] = p;
+            row[1]=p.getName();
+            row[2]=p.getAge();
+            row[3]=p.getGender();
+            row[4]=p.getCity();
+            row[5]=p.getPhoneNumber();
+            model.addRow(row);
+        }
+    }
+public void populatePatientTable(){
+         DefaultTableModel model = (DefaultTableModel) tblPatient.getModel();
+        model.setRowCount(0);
+         
+        for(Patient pat : pathistory.getPatienthistory()){
+            Object[] row = new Object[7];
+            row[0] = pat;
+            row[1]=pat.getAge();
+            row[2]=pat.getGender();
+            row[3]=pat.getCity();
+            row[4]=pat.getPhoneNumber();
+            row[5]=pat.getStreet();
+            row[6]=pat.getHouseNo();
+            
+            model.addRow(row);
+        }
+    }
+public void populateDoctorTable(){
+         DefaultTableModel model = (DefaultTableModel) tblDoctor.getModel();
+        model.setRowCount(0);
+         
+        for(Doctor d : docHistory.getDoctorhistory()){
+            Object[] row = new Object[7];
+            row[0] = d;
+            row[1]=d.getAge();
+            row[2]=d.getGender();
+            row[3]=d.getCity();
+            row[4]=d.getPhoneNumber();
+            row[5]=d.getHospName();
+            row[6]=d.getDocId();
+            
+            model.addRow(row);
+        }
+    }
+private void clrfeilds() {
+        txtAge.setText("");
+        txtCity.setText("");       
+        txtContactNumber.setText("");        
+        txtGender.setText("");
+        txtName.setText("");      
+        drpGender.setSelectedIndex(-1);
+        txtStreet.setText("");
+        txtHouseNo.setText("");
+}
+
+public void deleterowfromPersonTable(){
+    int selectedRowIndex = tblPerson.getSelectedRow();
+        if(selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this, "Please select a row to delete.");
+            return; 
+        }
+         DefaultTableModel model = (DefaultTableModel) tblPerson.getModel();
+         Person selectedPerson =(Person) model.getValueAt(selectedRowIndex , 0);
+         perHistory.deletePerson(selectedPerson);
+         JOptionPane.showMessageDialog(this, "Person moved to Patient Directory.");
+         
+         populatePersonTable();
+}
 }

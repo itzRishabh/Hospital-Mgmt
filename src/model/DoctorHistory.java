@@ -12,11 +12,10 @@ import java.util.ArrayList;
  */
 public class DoctorHistory {
     private ArrayList<Doctor> doctorhistory;
-
-    public ArrayList<Doctor> getdoctorhistory() {
+    
+    public ArrayList<Doctor> getDoctorhistory() {
         return doctorhistory;
     }
-
     public void setDoctorhistory(ArrayList<Doctor> doctorhistory) {
         this.doctorhistory = doctorhistory;
     }
@@ -24,21 +23,18 @@ public class DoctorHistory {
     public DoctorHistory(){        
         doctorhistory = new  ArrayList<Doctor>();
      }
-   
     
-    public Doctor addNewDoctor(){
+     public Doctor addNewDoctor(){
         Doctor doctor = new Doctor();
         doctorhistory.add(doctor);
-        return doctor; 
+        return doctor ; 
     }
    public void deleteDoctor(Doctor doctor){
        doctorhistory.remove(doctor);
        
    }
    
-   public void updateDoctor(Doctor doctor , int rowIndex){
+   public void updatedDoctor(Doctor doctor , int rowIndex){
        doctorhistory.set(rowIndex,doctor);
    }
-
-    
 }

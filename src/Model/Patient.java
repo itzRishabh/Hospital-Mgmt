@@ -72,10 +72,8 @@ public class Patient {
     public void setHouseNo(String HouseNo) {
         this.HouseNo = HouseNo;
     }
-       @Override
+    @Override
     public String toString(){
         return Name;
     }
-
-    
 }
