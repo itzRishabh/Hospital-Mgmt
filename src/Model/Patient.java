@@ -4,76 +4,65 @@
  */
 package model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author 91983
  */
-public class Patient {
-    private String Name;
-    private String Age;
-    private String Gender;
-    private String City;
-    private String PhoneNumber ;
-    private String Street;
-    private String HouseNo;
+public class Patient extends Person{
 
-    public String getName() {
-        return Name;
+    private int patientId;
+    private float height;
+    private float weight;
+    
+    private Map<Integer,EncounterHistory> patientHistoryMap=new HashMap<>();
+    
+
+    public Patient(String name, long cellPhoneNumber, String emailId, int age, String gender, House house, int patiendId, float height, float weight, String password) {
+        super(name,cellPhoneNumber,emailId,age,gender,house, password);
+        this.patientId =  patiendId;
+        this.height = height;
+        this.weight = weight;
+        
+    }    
+
+    public float getHeight() {
+        return height;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setHeight(float height) {
+        this.height = height;
     }
 
-    public String getAge() {
-        return Age;
+    public float getWeight() {
+        return weight;
     }
 
-    public void setAge(String Age) {
-        this.Age = Age;
+    public void setWeight(float weight) {
+        this.weight = weight;
     }
 
-    public String getGender() {
-        return Gender;
+    public int getPatientId() {
+        return patientId;
     }
 
-    public void setGender(String Gender) {
-        this.Gender = Gender;
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
     }
 
-    public String getCity() {
-        return City;
+    public Map<Integer,EncounterHistory> getPatientHistoryMap() {
+        return patientHistoryMap;
     }
 
-    public void setCity(String City) {
-        this.City = City;
+    public void setPatientHistoryMap(Map<Integer,EncounterHistory> patientHistoryMap) {
+        this.patientHistoryMap = patientHistoryMap;
     }
-
-    public String getPhoneNumber() {
-        return PhoneNumber;
-    }
-
-    public void setPhoneNumber(String PhoneNumber) {
-        this.PhoneNumber = PhoneNumber;
-    }
-
-    public String getStreet() {
-        return Street;
-    }
-
-    public void setStreet(String Street) {
-        this.Street = Street;
-    }
-
-    public String getHouseNo() {
-        return HouseNo;
-    }
-
-    public void setHouseNo(String HouseNo) {
-        this.HouseNo = HouseNo;
-    }
+    
     @Override
     public String toString(){
-        return Name;
-    }
+        return String.valueOf(patientId);
+    } 
+
 }
